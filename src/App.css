@@ -1,0 +1,31 @@
+.input-text{
+  border: 1px solid black;
+  width: 500px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.input-btn{
+  margin-left: 3px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+:hover.input-btn{
+  background-color: aquamarine;
+}
+.footer-item{
+  height: 50px;
+  width: auto;
+  border: 2px solid black;
+  align-items: flex-end;
+  background-color: rgb(53, 52, 52);
+  color: antiquewhite;
+  text-align: center;
+}
+.list-item{
+  min-height: 75vh;
+}
+.each-item{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
