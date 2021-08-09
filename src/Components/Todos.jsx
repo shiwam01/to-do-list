@@ -3,15 +3,14 @@ import { useState } from 'react'
 
 export const Todos = () => {
   const [todos, setTodos] = useState("");
-  const [todoItems, setTodoItems] = useState([]);
+  const [listItems, setListItems] = useState([]);
   function onDelete(index) {
-    const deleteTodo = todoItems.filter((todo, ind) => { return ind !== index });
-    setTodoItems(
-      deleteTodo);
+    const remainingTodo = listItems.filter((todo, ind) => { return ind !== index });
+    setListItems(
+      remainingTodo);
     console.log(index);
   }
-  return (
-    
+  return (   
     <div>
       <input
         className="input-text"
@@ -27,24 +26,22 @@ export const Todos = () => {
         type="button"
         value="Add"
         onClick={(e) => {
-          setTodoItems([
-            ...todoItems,
+          setListItems([
+            ...listItems,
             {
-              id: todoItems.length + 1,
+              id: listItems.length + 1,
               text: todos 
             }
           ]);
 if (todos == "") {
-  alert("write")
-}else{
-
+  alert("write something")
 }
           setTodos("");
           console.log("cleared text");
         }}
       />
       <ol className="list-item">
-        {todoItems.map((todo, ind) => (
+        {listItems.map((todo, ind) => (
           <li className="each-item" key={ind}>{todo.text}
             <button
               className="btn btn-danger"
