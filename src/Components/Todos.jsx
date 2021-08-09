@@ -26,19 +26,22 @@ export const Todos = () => {
         type="button"
         value="Add"
         onClick={(e) => {
-          setListItems([
-            ...listItems,
-            {
-              id: listItems.length + 1,
-              text: todos 
-            }
-          ]);
-if (todos == "") {
-  alert("write something")
-}
-          setTodos("");
-          console.log("cleared text");
-        }}
+
+          if (!todos) {
+            alert("write something")
+          }else{
+            setListItems([
+              ...listItems,
+              {
+                id: listItems.length + 1,
+                text: todos 
+              }
+            ]);
+            setTodos("");
+            console.log("cleared text");
+          }}
+          }
+          
       />
       <ol className="list-item">
         {listItems.map((todo, ind) => (
