@@ -5,19 +5,19 @@ export const Todos = () => {
   const [todos, setTodos] = useState("");
   const [todoItems, setTodoItems] = useState([]);
   function onDelete(index) {
-    const deleteTodo = todoItems.filter((todo, ind) =>
-    {return  ind !== index});
+    const deleteTodo = todoItems.filter((todo, ind) => { return ind !== index });
     setTodoItems(
-deleteTodo); 
+      deleteTodo);
     console.log(index);
   }
   return (
+    
     <div>
       <input
         className="input-text"
         type="text"
         value={todos}
-        placeholder="Enter a text"
+        placeholder="Write Your Task Here..................."
         onChange={(e) => {
           setTodos(e.target.value);
         }}
@@ -31,10 +31,14 @@ deleteTodo);
             ...todoItems,
             {
               id: todoItems.length + 1,
-              text: todos + "  -> Added on :- " + new Date()
+              text: todos 
             }
           ]);
-         
+if (todos == "") {
+  alert("write")
+}else{
+
+}
           setTodos("");
           console.log("cleared text");
         }}
@@ -52,8 +56,5 @@ deleteTodo);
       </ol>
     </div>
 
-    /* {todos.map((element,index)=>{
-                    return <TodoItem title={element.title} desc={element.desc} sno={index+1} />
-                })} */
   )
 }
